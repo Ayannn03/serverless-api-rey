@@ -53,7 +53,7 @@ router.patch('/:id', getAuthor, async(req,res) =>{
             if(req.body.name != null){
                 res.author.name = req.body.name;
             }
-            const updateAuthor = await res.author.save();
+            const updatedAuthor = await res.author.save();
             res.json(updatedAuthor);
         } catch (err){
             res.status(400).json({message:err.message});
@@ -90,7 +90,7 @@ async function getAuthor(req,res, next){
     try{
         const author = await AuthorModel.findById(req.params.id);
         if(!author){
-            return res.status(404).json({message: 'Author not founf'});
+            return res.status(404).json({message: 'Author not found'});
         }
         res.author = author
         next();
