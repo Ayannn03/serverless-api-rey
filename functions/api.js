@@ -7,7 +7,7 @@ const cors = require ('cors');
 
 const app = express();
 
-const dbCloudUrl= 'mongodb+srv://Ian:Renielian@cluster0.cfgcnv7.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
+const dbCloudUrl= 'mongodb+srv://IanRey:IanRey25@cluster0.l3hgyiz.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
 const dbLocalUrl = 'mongodb://localhost:27017/express-mongo-api';
 
 app.use(cors());
@@ -22,4 +22,5 @@ mongoose
 
 app.use('/.netlify/functions/api',router) 
 module.exports.handler = serverless(app);
-    
+
+
