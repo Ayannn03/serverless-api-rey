@@ -7,7 +7,7 @@ const cors = require ('cors');
 
 const app = express();
 
-const dbCloudUrl= 'mongodb+srv://IanRey:IanRey25@cluster0.l3hgyiz.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
+const dbCloudUrl= 'mongodb+srv://IanRey:IanRey23@cluster0.l3hgyiz.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0';
 const dbLocalUrl = 'mongodb://localhost:27017/express-mongo-api';
 
 app.use(cors());
@@ -19,8 +19,11 @@ mongoose
     .then(() => console.log('Connected to MongoDB'))
     .catch((error) =>console.error('Failed to connect to MongoDB',error))
 
+    const PORT = 4001; 
+    app.listen(PORT, () => {
+        console.log(`Server is running on port ${PORT}`);
+    });
 
 app.use('/.netlify/functions/api',router) 
 module.exports.handler = serverless(app);
-
-
+ 
